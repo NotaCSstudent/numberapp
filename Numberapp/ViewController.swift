@@ -9,12 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func randomNumber(_ sender: Any) {
+        
+        let randomNumber = Int.random(in: 100...999)
+        label.text = String(randomNumber)
+        
+    }
+    
 }
 
