@@ -12,6 +12,9 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
+   
+
+    
 
 
     @IBOutlet weak var label: UILabel!
@@ -22,6 +25,26 @@ class ViewController: UIViewController {
     }
 
     @IBAction func randomNumber(_ sender: Any) {
+        
+        
+               let file = "file:///Users/mahmudbabu/Documents/numberapp/rpgad.wav"
+               let u = URL(string: file)!
+
+               do {
+                 let z = try LeqMaster(u)
+                 print(z)
+                 
+                 let y = try LeqCalibration(u)
+                 print(y)
+                 
+               } catch {
+                 print(error)
+               }
+
+        
+        
+        
+        
         
         let randomNumber = Int.random(in: 100...999)
         label.text = String(randomNumber)
