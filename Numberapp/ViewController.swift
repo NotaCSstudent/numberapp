@@ -27,15 +27,17 @@ class ViewController: UIViewController {
     @IBAction func randomNumber(_ sender: Any) {
         
         
-               let file = "file:///Users/mahmudbabu/Documents/numberapp/rpgad.wav"
+              let randomNumber = Int.random(in: 100...999)
+              //label.text = String(randomNumber)
+               let file = "file:///Users/mahamudbabu/Documents/numberapp/rpgad.wav"
                let u = URL(string: file)!
 
                do {
                  let z = try LeqMaster(u)
-                 print(z)
+                label.text = String(z)
                  
                  let y = try LeqCalibration(u)
-                 print(y)
+                print(y)
                  
                } catch {
                  print(error)
@@ -44,10 +46,6 @@ class ViewController: UIViewController {
         
         
         
-        
-        
-        let randomNumber = Int.random(in: 100...999)
-        label.text = String(randomNumber)
         
     }
     
