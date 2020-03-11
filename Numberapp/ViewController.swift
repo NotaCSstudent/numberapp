@@ -16,7 +16,8 @@ class ViewController: UIViewController {
 
     
 
-
+    @IBOutlet weak var label2: UILabel!
+    
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
@@ -29,15 +30,15 @@ class ViewController: UIViewController {
         
               let randomNumber = Int.random(in: 100...999)
               //label.text = String(randomNumber)
-               let file = "file:///Users/mahamudbabu/Documents/numberapp/rpgad.wav"
+               let file = "/Users/admin/Documents/Numberapp/rpgad.wav"
                let u = URL(string: file)!
 
                do {
                  let z = try LeqMaster(u)
-                label.text = String(z)
+                label.text = String("Leq:\(z)")
                  
-                 let y = try LeqCalibration(u)
-                print(y)
+                 let y = try LeqMaster2(u)
+                label2.text = String("Lmax:\(y)")
                  
                } catch {
                  print(error)
