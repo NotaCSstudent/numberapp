@@ -20,16 +20,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var Slider: UISlider!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func Slidervaluechanged(_ sender: Any) {
+        print("slider \(Slider.value)")
+    }
+    
     @IBAction func randomNumber(_ sender: Any) {
+        /*
         
-        
-              let randomNumber = Int.random(in: 100...999)
-              //label.text = String(randomNumber)
+              
+              
                let file = "/Users/admin/Documents/Numberapp/rpgad.wav"
                let u = URL(string: file)!
 
@@ -43,9 +47,10 @@ class ViewController: UIViewController {
                } catch {
                  print(error)
                }
-
-        
-        
+*/
+        let randomNumber = Int.random(in: 100...999)
+        label.text = String(randomNumber)
+        label2.text = String(randomNumber)
         
         
     }
